@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>GitExample</name>
+	<name>Git</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,7 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1740754054056</id>
+			<id>1740754054053</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
