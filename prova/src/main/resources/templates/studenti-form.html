@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserisci Nuovo Studente</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="form-title text-center">Inserisci Nuovo Studente</h2>
+    
+    <form th:action="@{/studenti/aggiungi}" th:object="${studente}" method="post">
+
+        <!-- Nome -->
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome:</label>
+            <input type="text" class="form-control" id="nome" th:field="*{nome}" required>
+        </div>
+
+        <!-- Cognome -->
+        <div class="mb-3">
+            <label for="cognome" class="form-label">Cognome:</label>
+            <input type="text" class="form-control" id="cognome" th:field="*{cognome}" required>
+        </div>
+
+        <!-- Età -->
+        <div class="mb-3">
+            <label for="eta" class="form-label">Età:</label>
+            <input type="number" class="form-control" id="eta" th:field="*{eta}" required>
+            <small class="form-text">Inserisci l'età dello studente.</small>
+        </div>
+
+        <!-- Sesso -->
+        <div class="mb-3">
+            <label for="sesso" class="form-label">Sesso:</label>
+            <select class="form-control" id="sesso" th:field="*{sesso}" required>
+                <option value="">Seleziona...</option>
+                <option value="Maschio">Maschio</option>
+                <option value="Femmina">Femmina</option>
+                <option value="Altro">Altro</option>
+            </select>
+        </div>
+
+        <!-- Lavoro -->
+        <div class="mb-3">
+            <label for="lavoro" class="form-label">Lavoro:</label>
+            <input type="text" class="form-control" id="lavoro" th:field="*{lavoro}">
+        </div>
+
+        <!-- Stato Civile -->
+        <div class="mb-3">
+            <label for="statoCivile" class="form-label">Stato Civile:</label>
+            <select class="form-control" id="statoCivile" th:field="*{statoCivile}" required>
+                <option value="">Seleziona...</option>
+                <option value="Single">Single</option>
+                <option value="Sposato">Sposato</option>
+            </select>
+        </div>
+
+        <!-- Hobby -->
+        <div class="mb-3">
+            <label for="hobby" class="form-label">Hobby:</label>
+            <input type="text" class="form-control" id="hobby" th:field="*{hobby}">
+        </div>
+
+        <!-- Pulsante di invio -->
+        <button type="submit" class="btn btn-primary w-100">Aggiungi Studente</button>
+    </form>
+
+    <div class="mt-4 text-center">
+        <!-- Pulsanti per altre azioni -->
+        <button type="button" class="btn btn-outline-success"
+                onclick="window.location.href='/studenti';">Lista Studenti</button>
+        <button type="button" class="btn btn-outline-secondary"
+                onclick="window.location.href='/studenti/aggiungi';">Nuovo Studente</button>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
